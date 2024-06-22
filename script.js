@@ -7,7 +7,7 @@ let currfolder;
 async function getsongs(folder) {
     currfolder = folder;
     try {
-        let a = await fetch(`/${folder}/`);
+        let a = await fetch(`${folder}/`);
         let response = await a.text();
         let div = document.createElement("div");
         div.innerHTML = response;
@@ -17,7 +17,7 @@ async function getsongs(folder) {
         for (let index = 0; index < as.length; index++) {
             const element = as[index];
             if (element.href.endsWith(".mp3")) {
-                songs.push(element.href.split(`/${folder}/`)[1]);
+                songs.push(element.href.split(`${folder}/`)[1]);
             }
         }
 
@@ -55,7 +55,7 @@ async function getsongs(folder) {
 }
 
 const playMusic = (track, element) => {
-    curr_song.src = `/${currfolder}/` + track + ".mp3";
+    curr_song.src = `${currfolder}/` + track + ".mp3";
     curr_song.play();
     document.querySelector("#play").src = "svg/pause.svg";
     document.querySelector(".songinfo").innerHTML = decodeURIComponent(track);
@@ -92,7 +92,7 @@ function formatTime(seconds) {
 }
 
 async function displayAlbums() {
-    let a = await fetch(`/songs/`);
+    let a = await fetch(`songs/`);
     let response = await a.text();
     let div = document.createElement("div");
     div.innerHTML = response;
@@ -101,10 +101,10 @@ async function displayAlbums() {
     for (let index = 0; index < Array.from(anchors).length; index++) {
         const e = Array.from(anchors)[index];
 
-        if (e.href.includes("/songs")) {
+        if (e.href.includes("songs")) {
             let folder = e.href.split('/').slice(-2)[0];
             //metadata
-            let a = await fetch(`/songs/${folder}/info.json`);
+            let a = await fetch(`songs/${folder}/info.json`);
             let response = await a.json();
             console.log("respose", response);
             cardContainer.innerHTML += `<div data-folder="${folder}" class="card border pointer">
@@ -112,7 +112,7 @@ async function displayAlbums() {
                     <circle cx="12" cy="12" r="12" fill="#1ed760" />
                     <polygon points="9,7 17,12 9,17" fill="black" />
                 </svg>
-                <img src="/songs/${folder}/poster.jpeg" alt="">
+                <img src="songs/${folder}/poster.jpeg" alt="">
                 <h2>${response.title}</h2>
                 <p>${response.description}</p>
             </div>`;
