@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soptify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="style.css" class="css">
+    <link rel="stylesheet" href="utility.css" class="css">
+</head>
+
+<body>
+    <div class="container flex bg-black">
+        <div class="left border">
+            <div class="close pointer">
+                <img class="invert" src="svg/close.svg" alt="close">
+            </div>
+            <div class="home  bg-grey rounded  m1 p-1">
+                <div class="logo">
+                    <img class="invert" src="svg/logo.svg" alt="">
+                </div>
+                <ul>
+                    <li><img class="invert" src="svg/home.svg" alt="home">Home</li>
+                    <li><img class="invert" src="svg/search.svg" alt="search">search</li>
+                </ul>
+            </div>
+            <div class="library bg-grey rounded m1 p-1">
+                <div class="heading">
+                    <img class="invert" src="svg/library.svg" alt="your playlist">
+                    <h3>Your library
+                    </h3>
+                </div>
+                <div class="songlist">
+                    <ul>
+                    </ul>
+                </div>
+                <div class="footer">
+                    <a href="https://www.spotify.com/in-en/legal/"><span>Legal</span></a>
+                    <a href="https://www.spotify.com/in-en/safetyandprivacy/"><span>Safety &amp; Privacy
+                            Center</span></a>
+                    <a href="https://www.spotify.com/in-en/legal/privacy-policy/"><span>Privacy Policy</span></a>
+                    <a href="https://www.spotify.com/in-en/legal/cookies-policy/"> <span>Cookies</span></a>
+                    <a href="https://www.spotify.com/in-en/legal/privacy-policy/#s3"><span>About Ads</span></a>
+                    <a href="https://www.spotify.com/in-en/accessibility/"><span>Accessibility</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="right border bg-grey rounded">
+            <div class="header">
+                <div class="nav">
+                    <div class="hamburger invert pointer"><img src="svg/hamburger.svg" alt=""></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="white" fill="none">
+                        <path d="M15 6C15 6 9.00001 10.4189 9 12C8.99999 13.5812 15 18 15 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" color="white" fill="none">
+                        <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </div>
+                <div class="buttons">
+                    <button class="SingupBtn">Sing up</button>
+                    <button class="LoginBtn">Log in</button>
+                </div>
+            </div>
+
+            <div class="spotifyplaylist">
+                <h1>Soptify Playlist</h1>
+                <div id="cardContainer" class="cardContainer">
+                </div>
+            </div>
+            <div class="playbar invert">
+                <div class="seekbar pointer">
+                    <div class="circle"></div>
+                </div>
+                <div class="IPT">
+                    <div class="songinfo">
+                        <div class="songname">no song is playing</div>
+                    </div>
+                    <div class="songbtns">
+                        <img id="previous" class="pointer" src="svg/prev.svg" alt="">
+                        <img id="play" class="pointer" src="svg/play.svg" alt="">
+                        <img id="next" class="pointer" src="svg/next.svg" alt="">
+                    </div>
+                    <div class="VT">
+                        <div class="volume pointer">
+                            <img src="svg/volume.svg" alt="">
+                            <div class="volrange">
+                                <input class="pointer" type="range" name="range" id="volrange">
+                            </div>
+                        </div>
+                        <div class="songtime">00:00 / 00:00</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
